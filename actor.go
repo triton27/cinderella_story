@@ -2,10 +2,7 @@
 
 package main
 
-import (
-	"fmt"
-	"net/http"
-)
+import "fmt"
 
 type Gender int
 

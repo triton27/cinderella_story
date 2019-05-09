@@ -33,7 +33,7 @@ func NewHuman(n string, age int, g Gender) *Human {
 }
 
 func (h *Human) Say(s string) {
-	fmt.Printf("%v: %v\n", h.Name s)
+	fmt.Printf("%v: %v\n", h.Name, s)
 }
 
 func (h *Human) SetCostume(c Costume) {

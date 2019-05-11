@@ -15,3 +15,21 @@ ball := NewBall(19, 27)
 // シンデレラのドレスは用意しない
 dressRoom := NewDressRoom()
 dressRoom.Store(stepMother, sisterA, sisterB)
+
+// 継母のドレスはある
+dressRoom.GetDress(stepMother)
+
+// 舞踏会参加
+ball.Entry(stepMother)
+
+// 姉 A のドレスもある
+dressRoom.GetDress(sisterA)
+ball.Entry(sisterA)
+
+// 姉 B のドレスもある
+dressRoom.GetDress(sisterB)
+ball.Entry(sisterB)
+
+// シンデレラのドレスだけない
+dressRoom.GetDress(cinderella)
+ball.Entry(cinderella)

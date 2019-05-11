@@ -8,4 +8,10 @@ sisterA.Say("洗濯しておいて")
 sisterB.Say("お腹空いた")
 cinderella.Say("...")
 
+// 舞踏会は19時から27時まで開催される
 ball := NewBall(19, 27)
+
+// 舞踏会用のドレスを用意する
+// シンデレラのドレスは用意しない
+dressRoom := NewDressRoom()
+dressRoom.Store(stepMother, sisterA, sisterB)

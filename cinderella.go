@@ -7,3 +7,5 @@ stepMother.Say("ネコに餌をやれ")
 sisterA.Say("洗濯しておいて")
 sisterB.Say("お腹空いた")
 cinderella.Say("...")
+
+ball := NewBall(19, 27)

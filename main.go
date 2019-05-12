@@ -64,8 +64,9 @@ func main() {
 	finished := make(chan int, 1)
 	go func() {
 		for !ball.IsFinished() {
-			<-time.After(1 * time.Second):
+			<-time.After(1 * time.Second)
 			ball.Dancing()
+
 			// 24時になったら limit に 1 が送信される
 			if ball.Clock == 24 {
 				limit <- 1

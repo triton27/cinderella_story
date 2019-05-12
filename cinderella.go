@@ -1,3 +1,10 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
 stepMother := NewHuman("StepMother", 52, Woman)
 sisterA := NewHuman("SisterA", 23, Woman)
 sisterB := NewHuman("SisterB", 20, Woman)
@@ -78,3 +85,19 @@ foundShoes := falledShoes
 // 舞踏会終了
 <-finished
 
+// 靴の持ち主を舞踏会の参加者の中から探している
+for _, h := range ball.Entries {
+	if h.Gender == Woman {
+		if foundShoes.Wear(h) {
+			fmr.Println("見つけた！")
+		} else {
+			// ドレスルームにドレスがある人が h.Name に入ってる
+			fmt.Printf("%v: %vさんの靴ではない\n", price.Name, h.Name)
+		}
+	}
+}
+
+// 靴がぴったりなシンデレラ
+if foundShoes.Wear(cinderella) {
+	fmt.Println("見つけた！")
+}

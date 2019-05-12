@@ -96,10 +96,10 @@ func main() {
 	for _, h := range ball.Entries {
 		if h.Gender == Woman {
 			if foundShoes.Wear(h) {
-				fmr.Println("見つけた！")
+				fmt.Println("見つけた！")
 			} else {
 				// ドレスルームにドレスがある人が h.Name に入ってる
-				fmt.Printf("%v: %vさんの靴ではない\n", price.Name, h.Name)
+				fmt.Printf("%v: %vさんの靴ではない\n", prince.Name, h.Name)
 			}
 		}
 	}

@@ -48,3 +48,33 @@ prince := NewHuman("王子", 18, Man)
 tailcoat := NewTailcoat(prince)
 prince.SetCostume(tailcoat)
 ball.Entry(prince)
+
+// 舞踏会が開催
+ball.Start()
+finished := make(chan int, 1)
+go func() {
+	for !ball.IsFinished() {
+		<- time.After(1 * time.Second):
+		ball.Dancing()
+		// 24時になったら limit に 1 が送信される
+		if ball.Clock == 24 {
+			limit <- 1
+		}
+	}
+	ball.Finish()
+	finished <- 1
+}()
+
+<-magic.Broken
+// シンデレラが急いで帰る
+ball.Exit(cinderella)
+// ガラスの靴を落としてしまう！！
+falledShoes := cinderella.Shoes
+cinderella.Shoes = nil
+
+// 王子、ガラスの靴を見つける
+foundShoes := falledShoes
+
+// 舞踏会終了
+<-finished
+

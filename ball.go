@@ -15,7 +15,7 @@ type Ball struct {
 	FinishedAt int
 }
 
-func NewBall(startedAt, finishedAt) *Ball {
+func NewBall(startedAt, finishedAt int) *Ball {
 	return &Ball{
 		Clock:      startedAt, // 開始時刻
 		FinishedAt: finishedAt, // 終了時刻

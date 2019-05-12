@@ -26,7 +26,7 @@ type Tailcoat struct {
 	Owner *Human
 }
 
-func NewTailcoat(human *Human) Costume {
+func NewTailcoat(h *Human) Costume {
 	return &Tailcoat{
 		Owner: h,
 	}

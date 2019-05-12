@@ -29,7 +29,7 @@ func (b *Ball) Start() {
 func (b *Ball) Dancing() {
 	b.m.Lock()
 	defer b.m.Unlock()
-	fmt.Printf("現在 $d時\n", b.Clock)
+	fmt.Printf("現在 %d時\n", b.Clock)
 	for _, h := range b.Entries {
 		fmt.Printf("%v は踊っている\n", h.Name)
 	}
